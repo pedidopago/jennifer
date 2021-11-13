@@ -1,8 +1,3 @@
-[![Build Status](https://travis-ci.org/dave/jennifer.svg?branch=master)](https://travis-ci.org/dave/jennifer) [![Go Report Card](https://goreportcard.com/badge/github.com/pedidopago/jennifer)](https://goreportcard.com/report/github.com/pedidopago/jennifer)
-[![codecov](https://img.shields.io/badge/codecov-100%25-brightgreen.svg)](https://codecov.io/gh/dave/jennifer)
-![stability-stable](https://img.shields.io/badge/stability-stable-brightgreen.svg)
-[![Sourcegraph](https://sourcegraph.com/github.com/pedidopago/jennifer/-/badge.svg)](https://sourcegraph.com/github.com/pedidopago/jennifer?badge)
-
 # Jennifer
 Jennifer is a code generator for Go.
 

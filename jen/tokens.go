@@ -165,6 +165,13 @@ func (g *Group) Op(op string) *Statement {
 	return s
 }
 
+// MustImport adds the provided package path to the list of imported packages.
+func (g *Group) MustImport(path string) *Statement {
+	s := MustImport(path)
+	g.items = append(g.items, s)
+	return s
+}
+
 // Op renders the provided operator / token.
 func (s *Statement) Op(op string) *Statement {
 	t := token{
@@ -240,7 +247,7 @@ func Qual(path, name string) *Statement {
 }
 
 // MustImport imports the package at the provided path.
-func MustImport(path, name string) *Statement {
+func MustImport(path string) *Statement {
 	return newStatement().MustImport(path)
 }
 
