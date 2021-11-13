@@ -21,6 +21,7 @@ const (
 	literalByteToken tokenType = "literal_byte"
 	nullToken        tokenType = "null"
 	layoutToken      tokenType = "layout"
+	mustImportToken  tokenType = "must_import"
 )
 
 type token struct {
@@ -90,6 +91,9 @@ func (t token) render(f *File, w io.Writer, s *Statement) error {
 		if _, err := w.Write([]byte(alias)); err != nil {
 			return err
 		}
+	case mustImportToken:
+		path := t.content.(string)
+		_ = f.register(path)
 	case identifierToken:
 		if _, err := w.Write([]byte(t.content.(string))); err != nil {
 			return err
@@ -235,6 +239,11 @@ func Qual(path, name string) *Statement {
 	return newStatement().Qual(path, name)
 }
 
+// MustImport imports the package at the provided path.
+func MustImport(path, name string) *Statement {
+	return newStatement().MustImport(path)
+}
+
 // Qual renders a qualified identifier. Imports are automatically added when
 // used with a File. If the path matches the local path, the package name is
 // omitted. If package names conflict they are automatically renamed. Note that
@@ -273,6 +282,24 @@ func (s *Statement) Qual(path, name string) *Statement {
 		name:      "qual",
 		open:      "",
 		separator: ".",
+	}
+	*s = append(*s, g)
+	return s
+}
+
+// MustImport forces the import of the provided path.
+func (s *Statement) MustImport(path string) *Statement {
+	g := &Group{
+		close: "",
+		items: []Code{
+			token{
+				typ:     mustImportToken,
+				content: path,
+			},
+		},
+		name:      "must_import",
+		open:      "",
+		separator: "",
 	}
 	*s = append(*s, g)
 	return s
