@@ -51,7 +51,7 @@ func (t token) render(f *File, w io.Writer, s *Statement) error {
 				// If the formatted value is not in scientific notation, and does not have a dot, then
 				// we add ".0". Otherwise it will be interpreted as an int.
 				// See:
-				// https://github.com/dave/jennifer/issues/39
+				// https://github.com/pedidopago/jennifer/issues/39
 				// https://github.com/golang/go/issues/26363
 				out += ".0"
 			}

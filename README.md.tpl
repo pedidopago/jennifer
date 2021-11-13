@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/dave/jennifer.svg?branch=master)](https://travis-ci.org/dave/jennifer) [![Go Report Card](https://goreportcard.com/badge/github.com/dave/jennifer)](https://goreportcard.com/report/github.com/dave/jennifer)
+[![Build Status](https://travis-ci.org/dave/jennifer.svg?branch=master)](https://travis-ci.org/dave/jennifer) [![Go Report Card](https://goreportcard.com/badge/github.com/pedidopago/jennifer)](https://goreportcard.com/report/github.com/pedidopago/jennifer)
 [![codecov](https://img.shields.io/badge/codecov-100%25-brightgreen.svg)](https://codecov.io/gh/dave/jennifer)
 ![stability-stable](https://img.shields.io/badge/stability-stable-brightgreen.svg)
-[![Sourcegraph](https://sourcegraph.com/github.com/dave/jennifer/-/badge.svg)](https://sourcegraph.com/github.com/dave/jennifer?badge)
+[![Sourcegraph](https://sourcegraph.com/github.com/pedidopago/jennifer/-/badge.svg)](https://sourcegraph.com/github.com/pedidopago/jennifer?badge)
 
 # Jennifer
 Jennifer is a code generator for Go.
@@ -12,7 +12,7 @@ package main
 import (
     "fmt"
 
-    . "github.com/dave/jennifer/jen"
+    . "github.com/pedidopago/jennifer/jen"
 )
 
 func main() {{ "ExampleNewFile" | code }}
@@ -24,7 +24,7 @@ Output:
 
 ### Install
 ```
-go get -u github.com/dave/jennifer/jen
+go get -u github.com/pedidopago/jennifer/jen
 ```
 
 ### Need help? 
@@ -33,7 +33,7 @@ chat: I'm happy to help! Feel free to open an issue, email me or mention @dave
 in your PR.
 
 ### Examples
-Jennifer has a comprehensive suite of examples - see [godoc](https://godoc.org/github.com/dave/jennifer/jen#pkg-examples) for an index. Here's some examples of jennifer being used in the real-world:
+Jennifer has a comprehensive suite of examples - see [godoc](https://godoc.org/github.com/pedidopago/jennifer/jen#pkg-examples) for an index. Here's some examples of jennifer being used in the real-world:
 
 * [genjen](genjen/render.go) (which generates much of jennifer, using data in [data.go](genjen/data.go))
 * [zerogen](https://github.com/mrsinham/zerogen/blob/master/generator.go)

@@ -1,3 +1,3 @@
-module github.com/dave/jennifer
+module github.com/pedidopago/jennifer
 
-go 1.15
+go 1.17
